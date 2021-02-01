@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  
+  dataToChild= "Tanuj Data from parent";
   switch = false;
   color = 'red';
   colorAr = ['red', 'green', 'blue'];
   data = ['tanuj', 'aman', 'virendra', 'ankit']
-
+ dataFromSecondChild = "data from parent";
   dataObj = [
     {
       name: 'tanuj',
@@ -67,6 +67,10 @@ export class UserListComponent implements OnInit {
 
   dyanamicStyleChange(e) {
     this.dynamicColor = e.dynamicColor;
+  }
+
+  toSecondChild(e){
+     this.dataFromSecondChild = e;
   }
   // function randomInteger(min, max) {
   //   return Math.floor(Math.random() * (max - min + 1)) + min;

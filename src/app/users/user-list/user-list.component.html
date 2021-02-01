@@ -162,4 +162,18 @@
         <input ngModel type="text" name="dynamicColor" /><br><br>
         <button>Change Color</button>
     </form>
+
+
+    <br><br><br><br>
+    <hr>
+
+    <h1>Pass Data from Parent to Child</h1>
+    <app-child-component [parentData]="dataToChild"></app-child-component>
+
+    <br><br><br><br>
+    <hr>
+
+    <h1>Pass Data from Child to Parent</h1>
+    <app-second-child (dataForChild)="toSecondChild($event)"></app-second-child>
+    <h4>{{dataFromSecondChild}}</h4>
 </div>
