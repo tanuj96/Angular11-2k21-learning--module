@@ -1,0 +1,165 @@
+<div style="text-align:center;margin-top: 50px;">
+
+    <h1>Important Events</h1>
+    <br><br>
+
+    <button (click)="getUserName()">Add User without Parameter</button>
+
+    <br><br>
+
+    <button (click)="getParameter('Tanuj')">Add User with parameter Parameter</button>
+
+    <br><br>
+
+    <label>Keyup Event : </label>
+    <input type="text" (keyup)="myFunction('keyup done')" />
+
+    <br><br>
+
+    <label>Keyup with parameter Passing : </label>
+    <input type="text" #box (keyup)="myFunction(box.value)" />
+
+    <br><br>
+
+    <label>Keyup with parameter passing with Enter : </label>
+    <input type="text" #boxa (keyup.enter)="myFunction(boxa.value)" />
+
+    <br><br>
+
+    <label>Blur event to pass value when click outside input : </label>
+    <input type="text" #boxb (blur)="myFunction(boxb.value)" />
+
+    <br><br>
+
+    <div style="background-color: skyblue; min-height: 200px;border: 2px solid black;box-shadow: 2px 2px rgba(0, 0, 0, 0.63);padding-top:80px;box-sizing: border-box;"
+        (mouseover)="myFunction('hovered on box')">
+        <h1> Mouse Events On Hover</h1>
+    </div>
+    <br><br><br><br>
+    <div style=" min-height: 200px;border: 2px solid black;box-shadow: 2px 2px rgba(0, 0, 0, 0.63);padding-top:80px;box-sizing: border-box;"
+        (mouseleave)="myFunction('hovered on box')">
+        <h1> Mouse Events On Hover</h1>
+    </div>
+
+
+    <br><br>
+    <hr>
+
+    <h1>Property Binding</h1>
+
+    <input type="text" disabled={{switch}} value="Tanuj" />
+
+    <br><br><br>
+
+    <input type="text" [disabled]="switch" value="Tanuj" />
+
+    <br><br><br>
+    <hr>
+
+    <h1>NG IF</h1>
+    <input *ngIf="switch else elseBlock" type="text" value="if block" />
+
+    <ng-template #elseBlock>
+        <input type="text" value="else block" />
+    </ng-template>
+
+    <br><br><br>
+
+    <button (click)="inputSwitch()">Input Enable Button</button>
+
+    <br><br><br>
+    <hr>
+
+    <h1>NG SWITCH</h1>
+    <div [ngSwitch]="color">
+        <h2 style="color: red;" *ngSwitchCase="'red'">
+            Red
+        </h2>
+        <h2 style="color: green;" *ngSwitchCase="'green'">
+            Green
+        </h2>
+        <h2 style="color: blue;" *ngSwitchCase="'blue'">
+            Blue
+        </h2>
+    </div>
+
+
+    <br><br><br>
+
+    <button (click)="colorSwitch()">Switch Color</button>
+
+    <br><br><br>
+    <hr>
+
+
+    <h1>NG FOR</h1>
+    <ul *ngFor="let person of data" style="list-style: none;">
+        <li>{{person}}</li>
+    </ul>
+
+    <br><br><br><br>
+    <hr>
+
+    <h1>NG FOR on Array of Object</h1>
+    <div style="display: flex; justify-content: center;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Occupation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let boy of dataObj">
+                    <th>{{boy.name}}</th>
+                    <th>{{boy.age}}</th>
+                    <th>{{boy.occupation}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <br><br><br><br>
+    <hr>
+
+    <h1>Simple Form</h1>
+    <div style="display: flex; justify-content: space-around;">
+        <form #simpleForm="ngForm" (ngSubmit)="getUserValue(simpleForm.value)" style="flex: 1;">
+            <input type="text" ngModel placeholder="Enter Name" name="username" /><br><br>
+            <input type="number" ngModel placeholder="Age" name="age" /><br><br>
+            <input type="text" ngModel placeholder="Enter Number" name="mobile" /><br><br>
+            <input type="password" ngModel placeholder="Enter Password" name="password" /><br><br>
+            <button>Get Values</button>
+        </form>
+
+        <table style="flex: 3;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Mobile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of userObj">
+                    <th>{{employee.username}}</th>
+                    <th>{{employee.age}}</th>
+                    <th>{{employee.mobile}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br><br><br>
+    <hr>
+
+
+    <h1>Dyanamic Style Binding</h1>
+    <h3 [style.color]="dynamicColor">dynamic change</h3>
+    <form #colorForm="ngForm" (ngSubmit)="dyanamicStyleChange(colorForm.value)">
+        <input ngModel type="text" name="dynamicColor" /><br><br>
+        <button>Change Color</button>
+    </form>
+</div>

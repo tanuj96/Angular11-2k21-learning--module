@@ -1,0 +1,10 @@
+header{
+    background-image: linear-gradient(to right,lightgreen,blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    border-bottom: 1px solid blue;
+    color: white;
+    text-shadow: 2px 2px black;
+}

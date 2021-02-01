@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: linear-gradient(to left,rgba(0, 255, 191, 0.541) , rgba(212, 0, 255, 0.322));
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: crimson !important;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.459);
+}
+
+h1{
+    margin-top: 0;
+}

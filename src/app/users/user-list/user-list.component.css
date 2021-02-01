@@ -1,0 +1,12 @@
+table,th,td{
+    border: thin solid black;
+    min-width: 200px;
+}
+
+tbody{
+    background-color: aquamarine;
+}
+
+hr{
+    font-size: 10rem;
+}
